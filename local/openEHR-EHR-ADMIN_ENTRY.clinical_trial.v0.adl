@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"65d3519584211fbb833523bb0aa990a3">
+		["MD5-CAM-1.0.1"] = <"bc6bbd8b6bb9a2dc4f67cbbe4965296e">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
@@ -34,8 +34,8 @@ definition
 				items cardinality matches {0..*; unordered} matches {
 					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Clinical trial decision date
 						value matches {
-							DV_DATE_TIME matches {
-								value matches {yyyy-mm-ddTXX:XX:XX}
+							DV_DATE matches {
+								value matches {yyyy-mm-dd}
 							}
 						}
 					}
@@ -43,6 +43,10 @@ definition
 						value matches {
 							DV_CODED_TEXT matches {*}
 						}
+					}
+					allow_archetype ELEMENT[at0004] occurrences matches {0..*} matches {    -- Consent
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -63,6 +67,10 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Patient trial status">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Consent">
 					description = <"">
 				>
 			>
