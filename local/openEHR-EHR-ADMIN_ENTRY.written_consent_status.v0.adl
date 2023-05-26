@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"436e890b85cc31dbb671fb81e9bf3409">
+		["MD5-CAM-1.0.1"] = <"2714b27a6334868d8201efafccfab908">
 		["build_uid"] = <"92b28ef2-23c5-3b82-bede-fe95f24f18ed">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- written_consent_status
+	ADMIN_ENTRY[at0000] matches {    -- Written consent status
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
@@ -61,7 +61,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"written_consent_status">
+					text = <"Written consent status">
 					description = <"Consent status">
 				>
 				["at0001"] = <
