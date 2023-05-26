@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"90e3d69c4023b871a2d4fd7ccc13731c">
+		["MD5-CAM-1.0.1"] = <"91f48f4254ca51696b965206350beae7">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- patient_trial_status
+	ADMIN_ENTRY[at0000] matches {    -- Patient trial status
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
@@ -44,7 +44,6 @@ definition
 							DV_CODED_TEXT matches {*}
 						}
 					}
-					CLUSTER[at0003] occurrences matches {0..1} matches {*}    -- Patient trial status
 				}
 			}
 		}
@@ -55,7 +54,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"patient_trial_status">
+					text = <"Patient trial status">
 					description = <"Clinical trial">
 				>
 				["at0001"] = <
@@ -63,10 +62,6 @@ ontology
 					description = <"">
 				>
 				["at0002"] = <
-					text = <"Patient trial status">
-					description = <"">
-				>
-				["at0003"] = <
 					text = <"Patient trial status">
 					description = <"">
 				>
