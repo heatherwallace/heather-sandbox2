@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"83198a72e96c7d6f5bc77f776f58cddc">
+		["MD5-CAM-1.0.1"] = <"7f7a434e01dacc22498dd1887797098c">
 		["build_uid"] = <"18130d81-93f6-34cc-a9b5-d484c29b4073">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- Non-clinical annotation
+	ADMIN_ENTRY[at0000] occurrences matches {1..*} matches {    -- Non-clinical annotation
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
