@@ -1,0 +1,104 @@
+archetype (adl_version=1.4; uid=31b6e8fe-107c-4f81-bc2f-077f0b6d4a8e)
+	openEHR-EHR-ADMIN_ENTRY.clinical_trial_detail.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-05-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"8b1e5de1848899fd139a1706ff75869d">
+		["build_uid"] = <"9e30ea1f-29b6-3c7d-ab53-ec7fe9eb9d43">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- Clinical trial detail
+		data matches {
+			ITEM_TREE matches {
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Date trial started
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Clinical trial treatment type
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical trial acronym / name
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- IRAS number
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Study ID number
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Randomising investigator
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Clinical trial detail">
+					description = <"clinical_trial_detail">
+				>
+				["at0001"] = <
+					text = <"Date trial started">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Clinical trial treatment type">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Clinical trial acronym / name">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"IRAS number">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Study ID number">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Randomising investigator">
+					description = <"">
+				>
+			>
+		>
+	>
