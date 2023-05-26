@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e73c21f98d9cc6d0a2d841a4f34427c6">
+		["MD5-CAM-1.0.1"] = <"19669cd2d5ac036a9dfbd90ba1dbac80">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
@@ -32,7 +32,40 @@ definition
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
-					CLUSTER[at0004] occurrences matches {0..1} matches {*}    -- Clinical trial detail
+					CLUSTER[at0004] occurrences matches {0..1} matches {    -- Clinical trial detail
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Date trial started
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0013] occurrences matches {0..1} matches {    -- Clinical trial treatment type
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..1} matches {    -- Clinical trial acronym/name
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- IRAS number
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {    -- Study ID number
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {    -- Randomising investigator
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+						}
+					}
 					CLUSTER[at0003] occurrences matches {0..1} matches {    -- Patient trial decision & status
 						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0001] occurrences matches {0..1} matches {    -- Clinical trial decision date
@@ -49,8 +82,39 @@ definition
 							}
 						}
 					}
-					CLUSTER[at0006] occurrences matches {0..1} matches {*}    -- Written consent status
-					CLUSTER[at0007] occurrences matches {0..1} matches {*}    -- Referral to clinical trial
+					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Written consent status
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0010] occurrences matches {0..1} matches {    -- Written consent obtained
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {    -- Date consent obtained
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0007] occurrences matches {0..1} matches {    -- Referral to clinical trial
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Referring organisation
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0019] occurrences matches {0..1} matches {    -- Referring site
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Referring senior responsible clinician (SRC)
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+						}
+					}
 					CLUSTER[at0008] occurrences matches {0..1} matches {*}    -- Clinical trial follow up
 					CLUSTER[at0009] occurrences matches {0..*} matches {*}    -- Clinical trial annotation
 				}
@@ -96,6 +160,50 @@ ontology
 				>
 				["at0009"] = <
 					text = <"Clinical trial annotation">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Written consent obtained">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Date consent obtained">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Date trial started">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Clinical trial treatment type">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Clinical trial acronym/name">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"IRAS number">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Study ID number">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Randomising investigator">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Referring organisation">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Referring site">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Referring senior responsible clinician (SRC)">
 					description = <"">
 				>
 			>
