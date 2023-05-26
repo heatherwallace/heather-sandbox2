@@ -1,0 +1,62 @@
+archetype (adl_version=1.4; uid=120ba19b-776e-4967-9bf6-5e1a6b3d9831)
+	openEHR-EHR-EVALUATION.clinical_trial_follow_up.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-05-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5e20f70e133bbb5a9023c18daae81bdd">
+		["build_uid"] = <"4528c997-188e-334b-888e-6b9285dbc308">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Clinical trial_follow_up
+		data matches {
+			ITEM_TREE matches {
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Date onto follow up
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Clinical trial_follow_up">
+					description = <"Clinical trial_follow_up">
+				>
+				["at0001"] = <
+					text = <"Date onto follow up">
+					description = <"">
+				>
+			>
+		>
+	>
