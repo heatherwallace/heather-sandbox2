@@ -1,0 +1,92 @@
+archetype (adl_version=1.4; uid=515e9d2f-4ef5-41e9-a269-c782f78e1a22)
+	openEHR-EHR-INSTRUCTION.referral_to_clinical_trial.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-05-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"1417a16152cc417729f0525bc12027ec">
+		["build_uid"] = <"7b5bc8cf-77d1-3502-9105-9a18396e3db2">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {    -- Referral to clinical trial
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] matches {    -- Current Activity
+				description matches {
+					ITEM_TREE[at0002] matches {    -- Tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- Referring organisation
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Referring site
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Referring senior responsible clinician
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Referral to clinical trial">
+					description = <"referral_to_clinical_trial">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Referring organisation">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Referring site">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Referring senior responsible clinician">
+					description = <"">
+				>
+			>
+		>
+	>
