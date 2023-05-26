@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f4081a8de49a0a5bf0c328c20a3dac15">
+		["MD5-CAM-1.0.1"] = <"c09fe0fb02a0a5535ef4daebf7047ea4">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- Clinical trial patient involvement
+	ADMIN_ENTRY[at0000] occurrences matches {0..*} matches {    -- Clinical trial patient involvement
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
