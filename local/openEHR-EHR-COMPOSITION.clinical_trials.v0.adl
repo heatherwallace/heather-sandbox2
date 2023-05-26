@@ -1,0 +1,54 @@
+archetype (adl_version=1.4; uid=99ed62e2-ab58-4e44-adf5-ef006fbf9357)
+	openEHR-EHR-COMPOSITION.clinical_trials.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-05-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"b6e8a7cb2187acfc21c9ce04a4765e5a">
+		["build_uid"] = <"b9295a91-33d5-3727-b11d-406f95b92468">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Clinical trials
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::431]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Clinical trials">
+					description = <"Clinical trials">
+				>
+			>
+		>
+	>
