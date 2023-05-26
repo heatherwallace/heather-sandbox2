@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"19669cd2d5ac036a9dfbd90ba1dbac80">
+		["MD5-CAM-1.0.1"] = <"fd8348aa109827dd3c574ce42c1a739c">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
@@ -115,8 +115,65 @@ definition
 							}
 						}
 					}
-					CLUSTER[at0008] occurrences matches {0..1} matches {*}    -- Clinical trial follow up
-					CLUSTER[at0009] occurrences matches {0..*} matches {*}    -- Clinical trial annotation
+					CLUSTER[at0008] occurrences matches {0..1} matches {    -- Clinical trial follow up
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- Date onto follow up
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {    -- Follow up organisation status
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {    -- Follow up organisation
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Follow up site
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {    -- Completion of trial follow up
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							CLUSTER[at0029] occurrences matches {0..1} matches {    -- Outcome
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- End of trial outcome
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Other end of trial outcome
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0009] occurrences matches {0..*} matches {    -- Clinical trial annotation
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Date
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {    -- Recorded annotation
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -204,6 +261,46 @@ ontology
 				>
 				["at0020"] = <
 					text = <"Referring senior responsible clinician (SRC)">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Date onto follow up">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Follow up organisation">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Follow up organisation status">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Follow up site">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Completion of trial follow up">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"End of trial outcome">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Other end of trial outcome">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Outcome">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Date">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Recorded annotation">
 					description = <"">
 				>
 			>
