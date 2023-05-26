@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "0.1.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "4cfebfaea78dac1f11a1ab68da64ef72",
+      "MD5-CAM-1.0.1" : "0c773324c74e5531ce25d532cfe13610",
       "PARENT:MD5-CAM-1.0.1" : "d033a61cd892442b8ed86fec6419ec61"
     },
     "details" : {
@@ -62,7 +62,7 @@
       "children" : [ {
         "@type" : "C_ARCHETYPE_ROOT",
         "rmTypeName" : "ADMIN_ENTRY",
-        "occurrences" : "0..1",
+        "occurrences" : "0..*",
         "nodeId" : "at0.2",
         "attributes" : [ ],
         "attributeTuples" : [ ],
@@ -109,7 +109,20 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "c09fe0fb02a0a5535ef4daebf7047ea4"
       },
-      "details" : { }
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-ADMIN_ENTRY.clinical_trial_patient_involvement.v0",
     "differential" : true,
