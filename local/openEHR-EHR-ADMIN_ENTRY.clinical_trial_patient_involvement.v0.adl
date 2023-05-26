@@ -23,28 +23,36 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1c7aa67ac4141d80ef867e82c9e34eac">
+		["MD5-CAM-1.0.1"] = <"e73c21f98d9cc6d0a2d841a4f34427c6">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- clinical_trial_patient_involvement
+	ADMIN_ENTRY[at0000] matches {    -- Clinical trial patient involvement
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Clinical trial decision date
-						value matches {
-							DV_DATE matches {
-								value matches {yyyy-mm-dd}
+					CLUSTER[at0004] occurrences matches {0..1} matches {*}    -- Clinical trial detail
+					CLUSTER[at0003] occurrences matches {0..1} matches {    -- Patient trial decision & status
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0001] occurrences matches {0..1} matches {    -- Clinical trial decision date
+								value matches {
+									DV_DATE matches {
+										value matches {yyyy-mm-dd}
+									}
+								}
+							}
+							ELEMENT[at0002] occurrences matches {0..1} matches {    -- Patient trial status
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
 							}
 						}
 					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Patient trial status
-						value matches {
-							DV_CODED_TEXT matches {*}
-						}
-					}
-					CLUSTER[at0003] occurrences matches {0..1} matches {*}    -- Patient trial status
+					CLUSTER[at0006] occurrences matches {0..1} matches {*}    -- Written consent status
+					CLUSTER[at0007] occurrences matches {0..1} matches {*}    -- Referral to clinical trial
+					CLUSTER[at0008] occurrences matches {0..1} matches {*}    -- Clinical trial follow up
+					CLUSTER[at0009] occurrences matches {0..*} matches {*}    -- Clinical trial annotation
 				}
 			}
 		}
@@ -55,7 +63,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"clinical_trial_patient_involvement">
+					text = <"Clinical trial patient involvement">
 					description = <"Clinical trial">
 				>
 				["at0001"] = <
@@ -67,7 +75,27 @@ ontology
 					description = <"">
 				>
 				["at0003"] = <
-					text = <"Patient trial status">
+					text = <"Patient trial decision & status">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Clinical trial detail">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Written consent status">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Referral to clinical trial">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Clinical trial follow up">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Clinical trial annotation">
 					description = <"">
 				>
 			>
