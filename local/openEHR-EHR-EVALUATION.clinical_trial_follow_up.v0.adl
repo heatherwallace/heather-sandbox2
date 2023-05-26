@@ -23,18 +23,54 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5e20f70e133bbb5a9023c18daae81bdd">
+		["MD5-CAM-1.0.1"] = <"44d8f75de850dca60dbad30a0c89dcd2">
 		["build_uid"] = <"4528c997-188e-334b-888e-6b9285dbc308">
 	>
 
 definition
-	EVALUATION[at0000] matches {    -- Clinical trial_follow_up
+	EVALUATION[at0000] matches {    -- Clinical trial follow up
 		data matches {
 			ITEM_TREE matches {
 				items cardinality matches {0..*; unordered} matches {
 					ELEMENT[at0001] occurrences matches {0..1} matches {    -- Date onto follow up
 						value matches {
 							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Follow-up organisation status
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Follow up organisation
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Follow up site
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Completion of trial follow-up
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Outcome
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- End of trial outcome
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- Other end of trial outcome
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
 						}
 					}
 				}
@@ -50,11 +86,39 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Clinical trial_follow_up">
+					text = <"Clinical trial follow up">
 					description = <"Clinical trial_follow_up">
 				>
 				["at0001"] = <
 					text = <"Date onto follow up">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Follow-up organisation status">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Follow up organisation">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Follow up site">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Completion of trial follow-up">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Outcome">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"End of trial outcome">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Other end of trial outcome">
 					description = <"">
 				>
 			>
