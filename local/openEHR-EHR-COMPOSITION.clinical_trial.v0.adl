@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"46d8ac9c76bc40adda649839ecf98dbc">
+		["MD5-CAM-1.0.1"] = <"82723d3413b23acd54143c8379af1c73">
 		["build_uid"] = <"9a875031-c0a2-3ae0-beaa-42ad5b0033a6">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- Clinical trial
+	COMPOSITION[at0000] occurrences matches {1..*} matches {    -- Clinical trial
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
