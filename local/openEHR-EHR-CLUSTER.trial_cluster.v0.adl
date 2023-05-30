@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c9923e9a6aa69cc2201b7325feefd0ac">
+		["MD5-CAM-1.0.1"] = <"82bde678fda9988a3651078d78c58b7a">
 		["build_uid"] = <"0158e706-6bfb-3e56-9eff-fe637443de74">
 	>
 
@@ -34,6 +34,12 @@ definition
 				value matches {
 					DV_TEXT matches {*}
 				}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- CLUSTER_SLOT
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype ELEMENT[at0004] occurrences matches {0..*} matches {    -- Clinical trial details
 			}
 		}
 	}
@@ -48,6 +54,14 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Any old text">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"CLUSTER_SLOT">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Clinical trial details">
 					description = <"">
 				>
 			>
