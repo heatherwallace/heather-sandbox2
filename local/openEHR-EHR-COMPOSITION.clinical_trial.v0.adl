@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"82723d3413b23acd54143c8379af1c73">
+		["MD5-CAM-1.0.1"] = <"f1e209124e90f1deb9474490b356c371">
 		["build_uid"] = <"9a875031-c0a2-3ae0-beaa-42ad5b0033a6">
 	>
 
@@ -37,7 +37,11 @@ definition
 			}
 		}
 		context matches {
-			EVENT_CONTEXT matches {*}
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE matches {*}
+				}
+			}
 		}
 	}
 
