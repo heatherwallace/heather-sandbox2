@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c09fe0fb02a0a5535ef4daebf7047ea4">
+		["MD5-CAM-1.0.1"] = <"78249cf19217bb9a916d1c4037649e26">
 		["build_uid"] = <"7dec0462-922e-3164-902f-fb803e063f9d">
 	>
 
@@ -144,20 +144,6 @@ definition
 									DV_DATE matches {*}
 								}
 							}
-							CLUSTER[at0029] occurrences matches {0..1} matches {    -- Outcome
-								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0027] occurrences matches {0..1} matches {    -- End of trial outcome
-										value matches {
-											DV_CODED_TEXT matches {*}
-										}
-									}
-									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Other end of trial outcome
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
-								}
-							}
 						}
 					}
 					CLUSTER[at0009] occurrences matches {0..*} matches {    -- Clinical trial annotation
@@ -168,6 +154,20 @@ definition
 								}
 							}
 							ELEMENT[at0031] occurrences matches {0..1} matches {    -- Recorded annotation
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0029] occurrences matches {0..1} matches {    -- Clinical trial outcome
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0027] occurrences matches {0..1} matches {    -- End of trial outcome
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0028] occurrences matches {0..1} matches {    -- Other end of trial outcome
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -292,7 +292,7 @@ ontology
 					description = <"">
 				>
 				["at0029"] = <
-					text = <"Outcome">
+					text = <"Clinical trial outcome">
 					description = <"">
 				>
 				["at0030"] = <
